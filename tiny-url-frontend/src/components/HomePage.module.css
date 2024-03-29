@@ -1,0 +1,187 @@
+/* Main application styling */
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    font-family: 'Arial', sans-serif;
+    padding: 0;
+    margin: 0;
+    border-radius: 20px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+authPrompt {
+  text-align: center; /* Center-align the prompt and buttons */
+  margin-top: 20px; /* Adjust spacing as needed */
+}
+
+.button {
+  display: inline-block; /* Allows for margin and padding adjustments */
+  margin: 10px; /* Space between buttons */
+  padding: 10px 20px; /* Button size */
+  color: #fff; /* Text color */
+  background-color: #007bff; /* Button color */
+  text-decoration: none; /* Removes underline from link */
+  border-radius: 5px; /* Rounded corners for button-like appearance */
+  border: none; /* Removes border */
+  transition: background-color 0.2s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Navigation bar styling */
+.navContainer {
+  display: flex;
+  justify-content: space-between; /* Adjusted for even spacing */
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; /* Ensures the container stretches to the right edge */
+  z-index: 1000;
+}
+
+.authLink {
+  color: #007bff;
+  text-decoration: none;
+  padding: 0 5px; 
+  margin: 0 10px; 
+  white-space: nowrap; 
+}
+
+.navLink {
+  margin: 0 10px;
+  color: #007bff; /* Regular link color */
+  text-decoration: none; /* Removes underline */
+  padding: 8px 12px; /* Slightly larger padding for better touch target size */
+  transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.myUrlsLink {
+  background-color: #007bff; /* Eye-catching background color */
+  color: #ffffff; /* White text for contrast */
+  font-weight: bold; /* Makes the text thicker */
+  border-radius: 5px; /* Rounded corners for a modern look */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
+
+.myUrlsLink:hover {
+  background-color: #0056b3; /* Darker shade on hover for interaction feedback */
+  color: #ffffff;
+  text-decoration: none; /* Ensures text decoration does not reappear on hover */
+}
+
+.navLink:last-child, .authLink:last-child {
+  margin-right: 0; 
+}
+
+.navLink:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Content styling below navigation */
+.content {
+    margin-top: 60px; /* Offset for the fixed navigation bar */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Form and button styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.input {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.submitButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+/* Message styling */
+.errorMessage, .successMessage {
+    color: #d9534f; /* Error messages in red */
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.successMessage {
+    color: #3c763d; /* Success messages in green */
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navLink {
+        margin-bottom: 10px;
+        width: 90%;
+    }
+
+    .content, .form, .input {
+        width: 90%;
+    }
+}
+
+/* Short URL Display Styling */
+.shortUrlContainer {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #e9ecef; /* Light grey background for contrast */
+  color: #007bff; /* Matching the link color theme */
+  word-break: break-all; /* Ensures the URL does not overflow the container */
+  text-align: center; /* Center-aligns the content */
+}
+
+.shortUrlLink {
+  color: #0056b3;
+  text-decoration: none; /* Removes underline */
+  font-weight: bold; /* Highlights the URL */
+  transition: color 0.2s; /* Smooth transition for hover effect */
+}
+
+.shortUrlLink:hover {
+  color: #003875; /* Darker blue on hover for visual feedback */
+}
+
+.errorMessage {
+  color: #d9534f; /* Text color for errors */
+  background-color: #f2dede; /* Light red background */
+  border: 1px solid #ebccd1; /* Soft red border */
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px 0; /* Adds some space above and below the message */
+  text-align: left; /* Aligns the text to the left */
+  width: 100%;
+  max-width: 600px; /* Ensures the message box is not too wide */
+  box-sizing: border-box; /* Ensures padding does not add to the width */
+}

@@ -1,0 +1,124 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .topBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #ccc; /* Optional: adds a subtle line to separate the top bar from content */
+    align-items: center;
+  }
+  
+  .logoutLink, .urlsLink {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .logoutLink:hover, .urlsLink:hover {
+    text-decoration: underline;
+  }
+  
+  .heading {
+    font-size: 24px;
+    color: rgb(7, 10, 2); 
+    padding: 20px 0;
+  }
+  
+
+.topRight {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+  
+  .logoutLink {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .logoutLink:hover {
+    text-decoration: underline;
+  }
+  
+
+.urlList {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .editContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    width: 100%; /* Ensures the container takes up full width */
+}
+
+.editLabel {
+    font-weight: bold; /* Makes the label bold */
+    margin-bottom: 5px; /* Adds some space between the label and the input field */
+}
+
+/* Continue with previously defined styles */
+
+  
+  .urlItem {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Adds space between items */
+    margin-bottom: 15px;
+  }
+
+  urlData, .inputField, .buttonGroup {
+    flex-grow: 1;
+    flex-basis: calc(50% - 20px); /* Adjust this value to control the initial size and wrapping */
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 10px;
+}
+  
+  .urlLink {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .urlLink:hover {
+    text-decoration: underline;
+  }
+  
+  .editButton, .deleteButton {
+    margin-left: 10px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .deleteButton {
+    background-color: red;
+    color: white;
+  }
+  
+  .editButton {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .editButton:hover, .deleteButton:hover {
+    opacity: 0.8;
+  }
+  
+  .inputField {
+    flex-grow: 1;
+  }
+  
