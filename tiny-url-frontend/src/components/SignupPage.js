@@ -67,12 +67,19 @@ const SignUp = () =>
                     <h2>Sign Up</h2>
                     <form onSubmit={handleSubmit} className={styles.signUpForm}>
                         <div className={styles.formGroup}>
-                            <label className={styles.label}>Username:</label>
-                            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required className={styles.input} />
+                            <label htmlFor="username" className={styles.label}>Username:</label>
+                            <input type="text" 
+                            id="username" 
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)} required 
+                            className={styles.input} />
                         </div>
                         <div className={styles.formGroup}>
-                            <label className={styles.label}>Password:</label>
-                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required className={styles.input} />
+                            <label htmlFor="password" className={styles.label}>Password:</label>
+                            <input type="password" id="password" 
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)} required 
+                            className={styles.input} />
                         </div>
                         <button type="submit" className={styles.submitButton}>Sign Up</button>
                     </form>

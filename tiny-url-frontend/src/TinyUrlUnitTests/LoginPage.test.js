@@ -32,6 +32,23 @@ beforeEach(() => {
 
 describe("TinyUrlLoginPage", () => {
 
+  test("navigates to the signup page on clicking 'SignUp'", async () => {
+    render(<LoginPage />, { wrapper: BrowserRouter });
+
+    expect(screen.getByText(/don't have an account/i)).toBeInTheDocument();
+    // Find the signup link
+    const signUpLink = screen.getByText(/SignUp/i).closest('span');
+
+    // Simulate a click on the signup link
+    fireEvent.click(signUpLink);
+
+    await waitFor(() => {
+        // Check if navigation was called with the correct path
+      expect(mockNavigate).toHaveBeenCalledWith('/tinyurl-signup');
+    });
+});
+
+
     test("testing whether content is shown intitally when page is loaded", () => {
 
         render(
@@ -95,7 +112,7 @@ describe("TinyUrlLoginPage", () => {
         
       });
 
-      test("failed form submission", async () => {
+      test("failed login", async () => {
         fetch.mockRejectedValueOnce(new Error("invalid password"));
 
         render(<LoginPage />, { wrapper: MemoryRouter });
