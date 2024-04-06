@@ -46,6 +46,7 @@ beforeEach(() => {
             // Check if navigation was called with the correct path
           expect(mockNavigate).toHaveBeenCalledWith('/tinyurl-login');
         });
+        
     });
 
     test("redirects if already logged in", async () => {

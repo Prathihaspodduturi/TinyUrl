@@ -24,7 +24,7 @@ const MyUrlsPage = () => {
 
                 if (!response.ok) {
                     const data = await response.text();
-                    console.log(data);
+                    //console.log(data);
                     throw new Error(data);
                 }
 
@@ -35,19 +35,19 @@ const MyUrlsPage = () => {
                     editValue: url.originalUrl,
                 }));
                 setUrls(urlsData);
-                console.log(data);
+                //console.log(data);
             } catch (Error) {
               if (Error instanceof TypeError) {
                 sessionStorage.clear();
                 setConnectionError('Unable to connect to the server. Redirecting to loginpage');
                 setTimeout(() => {
-                  navigate('/login', { state: { error: "Unable to connect to the server. Please check your connection and try again." } });
+                  navigate('/tinyurl-login', { state: { error: "Unable to connect to the server. Please check your connection and try again." } });
               }, 3000);
             } else {
                 // Handle other errors
                 setError(Error.message);
               }
-                console.log(Error.message);
+                //console.log(Error.message);
             }
         }
         fetchData();
@@ -84,23 +84,23 @@ const MyUrlsPage = () => {
 
             if (!response.ok) {
                 const data = await response.text();
-                console.log(data);
+                //console.log(data);
                 throw new Error(data);
             }
 
             // Optionally fetch the updated list or update locally
-            alert("URL Updated Successfuly");
+            alert("URL Updated Successfully");
             setUrls(urls.map(url => url.id === id ? { ...url, originalUrl: updatedUrl.editValue, isEditing: false } : url));
         } catch (Error) {
           if (Error instanceof TypeError) {
             sessionStorage.clear();
             setConnectionError('Unable to connect to the server. Redirecting to loginpage');
             setTimeout(() => {
-              navigate('/login', { state: { error: "Unable to connect to the server. Please check your connection and try again." } });
-          }, 1000);
+              navigate('/tinyurl-login', { state: { error: "Unable to connect to the server. Please check your connection and try again." } });
+          }, 1000); 
             }
             setError(Error.message);
-            console.log(Error.message);
+            //console.log(Error.message);
         }
     };
 
@@ -122,7 +122,7 @@ const MyUrlsPage = () => {
 
         if(!response.ok){
           const data = await response.text();
-          console.log(data);
+          //console.log(data);
           throw new Error(data);
         }
 
@@ -136,13 +136,13 @@ const MyUrlsPage = () => {
           sessionStorage.clear();
           setConnectionError('Unable to connect to the server. Redirecting to loginpage');
           setTimeout(() => {
-            navigate('/login', { state: { error: "Unable to connect to the server. Please check your connection and try again." } });
+            navigate('/tinyurl-login', { state: { error: "Unable to connect to the server. Please check your connection and try again." } });
         }, 1000);
       }
       else
       {
         setError(Error.message);
-        console.log(Error.message);
+        //console.log(Error.message);
       }
       }
     };
@@ -156,14 +156,14 @@ const MyUrlsPage = () => {
     return (
       <div>
         <div className={styles.topRight}>
-        <NavLink to="/logout" className={styles.logoutLink}>
+        <NavLink to="/tinyurl-logout" className={styles.logoutLink}>
             Logout
           </NavLink>
         </div>
         {!connectionError && (
           <div>
             <h1 className={styles.heading}>Your URLs are:</h1>
-            {error && <p className={styles.errorMessage}>Error: {error}</p>}
+            {error && <p className={styles.errorMessage}>{error}</p>}
             <ul className={styles.urlList}>
             {urls.map((url) => (
     <li key={url.id} className={styles.urlItem}>
